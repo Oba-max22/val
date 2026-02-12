@@ -333,12 +333,14 @@
     const yesBtn = document.getElementById("yes");
     const card = document.querySelector(".card");
 
-    // 1. Define these at the top so ALL functions can see them
     const defaultMusicFrame = document.getElementById("default-music");
     const yesMusicFrame = document.getElementById("yes-music");
     const modal = document.getElementById("val-popup");
 
     noBtn.addEventListener("mouseenter", () => {
+      if (defaultMusicFrame) {
+          defaultMusicFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }
 
       const cardRect = card.getBoundingClientRect();
       const btnRect = noBtn.getBoundingClientRect();
@@ -384,11 +386,6 @@
     }
 
     function createHeart() {
-
-      if (defaultMusicFrame) {
-        defaultMusicFrame.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-      }
-
       const heart = document.createElement("div");
       heart.className = "heart";
       heart.innerHTML = ["💖", "💝", "💕"][Math.floor(Math.random() * 3)];
