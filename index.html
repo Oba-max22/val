@@ -176,18 +176,6 @@
       filter: blur(0.3px);
     }
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-
-      to {
-        transform: translateY(-120vh) scale(1.8);
-        opacity: 0;
-      }
-    }
-
     @keyframes floatDown {
       from {
         transform: translateY(-120vh) scale(1.8);
@@ -214,10 +202,10 @@
 
     .modal-content {
       background: white;
-      margin: 15% auto;
+      margin: 10% auto;
       padding: 0px;
       border-radius: 20px;
-      width: min(18%, 500px);
+      width: 30%;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -291,8 +279,8 @@
       }
 
       .modal-content {
-        margin: 30% auto;
-        width: 70%;
+        margin: 40% auto;
+        width: 90%;
       }
 
       .modal-content p {
